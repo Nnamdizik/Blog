@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>Blog</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href=""
+          ><h2 style="text-decoration: none; color: black">ZikBlog</h2></a
+        >
+      </div>
+      <div class="nav-items">
+        {% if current_user.authenticated %}
+        <a href="{{url_for('create_post')}}">CreatePost</a>
+        <a href="{{url_for('logout')}}">Logout</a>
+        {% else %}
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="{{url_for('login')}}">Login</a>
+        <a href="{{url_for('register')}}"> Signup</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <main class="main-container">{% block content %} {% endblock %}</main>
+
+    <footer>
+      <p class="footer">
+        &copy; ZigBlog
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+    </footer>
+  </body>
+</html>

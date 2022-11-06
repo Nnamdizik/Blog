@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html'%} {% block content %}
+
+<!-- <h2>welcome to ZikBlog</h2> -->
+<div>
+  <p>
+    Welcome to ZikBlog, kindly click <a href="{{url_for('home')}}">here</a> to
+    check out some amazing list of blogs content written by well known authors
+  </p>
+</div>
+
+<div>
+  <h2>Create an article</h2>
+  <button><a href="{{url_for('create_post')}}">creating blog</a></button>
+</div>
+
+{% endblock content %}

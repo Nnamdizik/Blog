@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %} {% for blog in blog_post %}
+<h2>{{ blog.title}}</h2>
+<p>{{ blog.article }}</p>
+<h4>{{ blog.date}}</h4>
+{% endfor %} {% endblock %}
